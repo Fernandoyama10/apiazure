@@ -12,6 +12,7 @@ class Student{
 
     async createUser(req, res){
         try{
+            
             const { name, grade, grp, email, city, state, street, extnumber, postalcode, crosses, neighborh, latitude, longitude } = req.body;
     const response = await db.query('INSERT INTO public.student VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)', [name, grade, grp, email, city, state, street, extnumber, postalcode, crosses, neighborh, latitude, longitude]);
     res.json({
